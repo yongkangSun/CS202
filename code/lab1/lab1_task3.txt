@@ -1,0 +1,26 @@
+# text segment
+.text
+main:	
+	li $v0, 8	
+	
+	lw $a1, int_9
+	la $a0, ID
+	syscall	
+	lw $a1, int_12
+	la $a0, NAME
+	syscall
+	
+	li $v0, 4
+	
+	la $a0, NAME
+	syscall
+	la $a0, ID
+	syscall
+	li $v0,10
+	syscall
+#data segment
+.data
+	ID:	.asciiz "********\n"
+	NAME:	.asciiz "***********\n"
+	int_9:	.word 	10
+	int_12:	.word	13

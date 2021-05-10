@@ -1,0 +1,48 @@
+.data
+	str:	.space 20
+.text
+	la	$s0, str
+	
+	li	$v0, 5
+	syscall
+	addi	$t0, $v0, 0
+	addi	$t2, $t0, 48
+	sb	$t2, 0($s0)
+	
+	li	$t2, 42
+	sb	$t2, 1($s0)
+	
+	li	$v0, 5
+	syscall
+	addi	$t1, $v0, 0
+	addi	$t2, $t1, 48
+	sb	$t2, 2($s0)
+	
+	li	$t2, 61
+	sb	$t2, 3($s0)
+	
+	mul 	$t3, $t0, $t1
+	bge	$t3, 10, case2
+	
+case1:
+	addi	$t2, $t3, 48
+	sb	$t2, 4($s0)
+	j	exit
+	
+case2:
+	li	$t4, 10
+	div	$t3, $t4
+	mflo	$t2
+	addi	$t2, $t2, 48
+	sb	$t2, 4($s0)
+	mfhi	$t2
+	addi	$t2, $t2, 48
+	sb	$t2, 5($s0)
+	
+exit:
+	li	$v0, 4
+	la	$a0, str
+	syscall
+	
+	li	$v0, 10
+	syscall

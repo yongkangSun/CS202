@@ -1,0 +1,13 @@
+.include "macro_print_str.asm"
+.data
+tdata: .word 0x71111111 
+tdata2: .word 0xf1111111
+.text
+main:
+lw $t0,tdata
+lw $t1,tdata2
+sub $a0,$t0,$t1
+mulou $a0,$t0,$t0
+li $v0,1
+syscall
+end

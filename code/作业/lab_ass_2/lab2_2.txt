@@ -1,0 +1,125 @@
+.data
+	str:	.space 100
+.text
+main:
+	la	$s0, str
+	
+	#读取控制台输入分别存在 s1 s2 中
+	li	$v0, 5
+	syscall
+	addi	$s1, $v0, 0
+	
+	li	$v0, 5
+	syscall
+	addi	$s2, $v0, 0
+	
+	#三个循环变量
+	addi	$t0, $zero, 1	#每一行的循环
+	addi	$t1, $s1, -1	#每一列的初始位置 - 1
+	addi	$t2, $s2, 0	#每一列的结束位置
+	
+	addi	$t3, $zero, 0	#内存中写入的指针
+	
+#外层循环 控制列的打印
+loop1:
+	addi	$t1, $t1, 1
+	ble	$t1, $t2, loop2
+	j	end
+
+#内层循环 控制行的打印	
+loop2:
+	jal	generate_string
+	beq	$t0, $t1, loop2_2
+	loop2_1:
+		addi	$t0, $t0, 1
+		j	loop2
+	loop2_2:
+		addi	$t0, $zero, 1
+		j	loop1
+
+generate_string:	
+	#存储 乘数1
+	addu	$a0, $s0, $t3
+	addi	$a1, $t0, 48
+	sb	$a1, ($a0)
+	addi	$t3, $t3, 1
+	
+	#存储 *
+	addu	$a0, $s0, $t3
+	addi	$a1, $zero, 42
+	sb	$a1, ($a0)
+	addi	$t3, $t3, 1
+	
+	#存储 乘数2
+	addu	$a0, $s0, $t3
+	addi	$a1, $t1, 48
+	sb	$a1, ($a0)
+	addi	$t3, $t3, 1
+	
+	#存储 *
+	addu	$a0, $s0, $t3
+	addi	$a1, $zero, 61
+	sb	$a1, ($a0)
+	addi	$t3, $t3, 1
+	
+	#存储 乘积
+	mult  	$t0, $t1
+	mflo	$a1
+	bge	$a1, 10, case2
+	case1:
+		#数值部分
+		addu	$a0, $s0, $t3
+		addi	$a1, $a1, 48
+		sb	$a1, ($a0)
+		addi	$t3, $t3, 1
+		#空格部分
+		addu	$a0, $s0, $t3
+		addi	$a1, $zero, 32
+		sb	$a1, ($a0)
+		addi	$t3, $t3, 1
+		addu	$a0, $s0, $t3
+		addi	$a1, $zero, 32
+		sb	$a1, ($a0)
+		addi	$t3, $t3, 1
+		
+		j	exit_case
+	case2:
+		#数值部分
+		addi	$t4, $zero, 10
+		div	$a1, $t4
+		mflo	$a1
+		addu	$a0, $s0, $t3
+		addi	$a1, $a1, 48
+		sb	$a1, ($a0)
+		addi	$t3, $t3, 1
+		mfhi	$a1
+		addu	$a0, $s0, $t3
+		addi	$a1, $a1, 48
+		sb	$a1, ($a0)
+		addi	$t3, $t3, 1
+		#空格部分
+		addu	$a0, $s0, $t3
+		addi	$a1, $zero, 32
+		sb	$a1, ($a0)
+		addi	$t3, $t3, 1
+		j	exit_case
+		
+	exit_case:
+		bne	$t0, $t1, exit_func
+		addu	$a0, $s0, $t3
+		addi	$a1, $zero, 10
+		sb	$a1, ($a0)
+		addi	$t3, $t3, 1
+		exit_func:
+		jr	$ra
+end:
+	li	$v0, 4
+	la	$a0, str
+	syscall
+	
+	li	$v0, 10
+	syscall
+
+	
+	
+	

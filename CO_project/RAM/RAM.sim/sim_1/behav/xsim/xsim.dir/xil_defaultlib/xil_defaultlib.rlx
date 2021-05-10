@@ -1,0 +1,8 @@
+0.6
+2017.4
+Dec 15 2017
+21:07:18
+G:/code/CO_project/RAM/RAM.sim/sim_1/behav/xsim/glbl.v,1513215260,verilog,,,,glbl,,,,,,,,
+G:/code/CO_project/RAM/RAM.srcs/sim_1/new/RAM_sim.v,1619331898,verilog,,,,RAM_sim,,,,,,,,
+G:/code/CO_project/RAM/RAM.srcs/sources_1/ip/RAM/sim/RAM.v,1618284464,verilog,,G:/code/CO_project/RAM/RAM.srcs/sources_1/new/RAM_control.v,,RAM,,,,,,,,
+G:/code/CO_project/RAM/RAM.srcs/sources_1/new/RAM_control.v,1619322518,verilog,,G:/code/CO_project/RAM/RAM.srcs/sim_1/new/RAM_sim.v,,RAM_control,,,,,,,,

@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/code/CO_project/IFetch32/IFetch32.srcs/sources_1/ip/program/sim/program.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module program
+INFO: [VRFC 10-2263] Analyzing Verilog file "F:/code/CO_project/IFetch32/IFetch32.srcs/sim_1/new/IFetc32_sim.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module IFetc32_sim

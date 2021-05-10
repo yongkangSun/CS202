@@ -1,0 +1,98 @@
+.data
+	apply:		.asciiz "apply stack\n"
+	release:	.asciiz	"release stack\n"
+	return:		.asciiz	"return:"
+	nextline:		.asciiz	"\n"
+.text
+main:
+	#数据读取
+	li	$v0, 5
+	syscall
+	move	$s0, $v0
+	li	$v0, 5
+	syscall
+	move	$s1, $v0
+	#递归调用
+	jal	power
+	#最后返回的方程
+	li	$v0,1
+	move	$a0, $a3
+	syscall
+	
+	li	$v0, 10
+	syscall
+power:
+	#存储递归中本层用到的寄存器中的数据
+	addi	$sp, $sp, -8
+	sw	$ra, 0($sp)
+	sw	$s1, 4($sp)
+	
+	la	$a0, apply
+	li	$v0, 4
+	syscall
+	
+	bgtz	$s1, recurence
+	
+	#递归返回时执行的部分
+	addi	$a3, $zero, 1
+	
+	la	$a0, release
+	li	$v0, 4
+	syscall 
+	
+	la	$a0, return
+	li	$v0, 4
+	syscall
+	
+	move	$a0, $a3
+	li	$v0, 1
+	syscall
+	
+	la	$a0, nextline
+	li	$v0, 4
+	syscall
+	
+	#恢复递归中本层用到的寄存器中的数据
+	lw	$ra, 0($sp)
+	lw	$s1, 4($sp)
+	addi	$sp, $sp, 8
+	
+	#返回上层
+	jr	$ra
+	
+recurence:
+	#继续递归调用
+	addi	$s1, $s1, -1
+	jal	power
+	
+	#递归返回时执行的部分
+	mul	$a3, $a3, $s0
+	
+	la	$a0, release
+	li	$v0, 4
+	syscall 
+	
+	la	$a0, return
+	li	$v0, 4
+	syscall
+	
+	move	$a0, $a3
+	li	$v0, 1
+	syscall
+	
+	la	$a0, nextline
+	li	$v0, 4
+	syscall
+	
+	#恢复上层寄存器数值
+	lw	$ra, 0($sp)
+	lw	$s1, 4($sp)
+	addi	$sp, $sp, 8
+	
+	#返回上层
+	jr	$ra
+	
+	
+	
+	
+	

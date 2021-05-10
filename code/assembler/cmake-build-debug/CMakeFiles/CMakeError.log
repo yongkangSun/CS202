@@ -1,0 +1,54 @@
+Determining if the C compiler works failed with the following output:
+Change Dir: F:/计算机组成原理/code/assembler/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):E:/cpp c/codeblocks/MinGW/bin/mingw32-make.exe cmTC_a931c/fast && E:/cpp c/codeblocks/MinGW/bin/mingw32-make.exe  -f CMakeFiles\cmTC_a931c.dir\build.make CMakeFiles/cmTC_a931c.dir/build
+mingw32-make.exe[1]: Entering directory 'F:/计算机组成原理/code/assembler/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_a931c.dir/testCCompiler.c.obj
+"E:\cpp c\codeblocks\MinGW\bin\gcc.exe"    -o CMakeFiles\cmTC_a931c.dir\testCCompiler.c.obj   -c F:\璁＄畻鏈虹粍鎴愬師鐞哱code\assembler\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c
+gcc.exe: error: F:\璁＄畻鏈虹粍鎴愬師鐞哱code\assembler\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c: No such file or directory
+gcc.exe: fatal error: no input files
+compilation terminated.
+CMakeFiles\cmTC_a931c.dir\build.make:84: recipe for target 'CMakeFiles/cmTC_a931c.dir/testCCompiler.c.obj' failed
+mingw32-make.exe[1]: *** [CMakeFiles/cmTC_a931c.dir/testCCompiler.c.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'F:/计算机组成原理/code/assembler/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:140: recipe for target 'cmTC_a931c/fast' failed
+mingw32-make.exe: *** [cmTC_a931c/fast] Error 2
+
+
+
+Determining if the C compiler works failed with the following output:
+Change Dir: F:/计算机组成原理/code/assembler/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):E:/cpp c/codeblocks/MinGW/bin/mingw32-make.exe cmTC_e6fee/fast && E:/cpp c/codeblocks/MinGW/bin/mingw32-make.exe  -f CMakeFiles\cmTC_e6fee.dir\build.make CMakeFiles/cmTC_e6fee.dir/build
+mingw32-make.exe[1]: Entering directory 'F:/计算机组成原理/code/assembler/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_e6fee.dir/testCCompiler.c.obj
+"E:\cpp c\codeblocks\MinGW\bin\gcc.exe"    -o CMakeFiles\cmTC_e6fee.dir\testCCompiler.c.obj   -c F:\璁＄畻鏈虹粍鎴愬師鐞哱code\assembler\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c
+gcc.exe: error: F:\璁＄畻鏈虹粍鎴愬師鐞哱code\assembler\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c: No such file or directory
+gcc.exe: fatal error: no input files
+compilation terminated.
+CMakeFiles\cmTC_e6fee.dir\build.make:84: recipe for target 'CMakeFiles/cmTC_e6fee.dir/testCCompiler.c.obj' failed
+mingw32-make.exe[1]: *** [CMakeFiles/cmTC_e6fee.dir/testCCompiler.c.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'F:/计算机组成原理/code/assembler/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:140: recipe for target 'cmTC_e6fee/fast' failed
+mingw32-make.exe: *** [cmTC_e6fee/fast] Error 2
+
+
+
+Determining if the C compiler works failed with the following output:
+Change Dir: F:/计算机组成原理/code/assembler/cmake-build-debug/CMakeFiles/CMakeTmp
+
+Run Build Command(s):E:/cpp c/codeblocks/MinGW/bin/mingw32-make.exe cmTC_554a3/fast && E:/cpp c/codeblocks/MinGW/bin/mingw32-make.exe  -f CMakeFiles\cmTC_554a3.dir\build.make CMakeFiles/cmTC_554a3.dir/build
+mingw32-make.exe[1]: Entering directory 'F:/计算机组成原理/code/assembler/cmake-build-debug/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_554a3.dir/testCCompiler.c.obj
+"E:\cpp c\codeblocks\MinGW\bin\gcc.exe"    -o CMakeFiles\cmTC_554a3.dir\testCCompiler.c.obj   -c F:\璁＄畻鏈虹粍鎴愬師鐞哱code\assembler\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c
+gcc.exe: error: F:\璁＄畻鏈虹粍鎴愬師鐞哱code\assembler\cmake-build-debug\CMakeFiles\CMakeTmp\testCCompiler.c: No such file or directory
+gcc.exe: fatal error: no input files
+compilation terminated.
+CMakeFiles\cmTC_554a3.dir\build.make:84: recipe for target 'CMakeFiles/cmTC_554a3.dir/testCCompiler.c.obj' failed
+mingw32-make.exe[1]: *** [CMakeFiles/cmTC_554a3.dir/testCCompiler.c.obj] Error 1
+mingw32-make.exe[1]: Leaving directory 'F:/计算机组成原理/code/assembler/cmake-build-debug/CMakeFiles/CMakeTmp'
+Makefile:140: recipe for target 'cmTC_554a3/fast' failed
+mingw32-make.exe: *** [cmTC_554a3/fast] Error 2
+
+
+

@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Tue Apr 27 12:04:11 2021
+# Process ID: 8440
+# Current directory: F:/code/CO_project/IFetch32/IFetch32.runs/program_synth_1
+# Command line: vivado.exe -log program.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source program.tcl
+# Log file: F:/code/CO_project/IFetch32/IFetch32.runs/program_synth_1/program.vds
+# Journal file: F:/code/CO_project/IFetch32/IFetch32.runs/program_synth_1\vivado.jou
+#-----------------------------------------------------------
+source program.tcl -notrace

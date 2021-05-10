@@ -19,21 +19,30 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
 module RAM_sim();
-reg clock = 1'b0;
-reg memWrite = 1'b0;
-reg [31:0] addr = 32'h0000_0000;
-reg [31:0] writeData = 32'ha000_0000;
-wire [31:0] readData;
+   // input
+reg[31:0] address;
+reg[31:0] write_data;
+reg  Memwrite;
+reg  clock;    
+// output
+wire[31:0] read_data;
 
-RAM_control test_RAM(readData, clock, addr, writeData, memWrite);
+dmemory32 Uram(.read_data(read_data),.address(address),.write_data(write_data),.Memwrite(Memwrite),.clock(clock));
+
+initial begin
+clock = 1'b0;
+Memwrite = 1'b0;
+address = 32'h0000_0000;
+write_data = 32'ha000_0000;
+
+end
 
 always begin
     #10 clock = ~clock;
 end 
 always begin
-    #20 addr <= addr + 32'h0000_0004;
+    #20 address <= address + 32'h0000_0004;
 end  
 
 /*initial begin

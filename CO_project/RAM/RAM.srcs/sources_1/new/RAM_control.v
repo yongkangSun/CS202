@@ -20,19 +20,19 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module RAM_control(readData, clock, Address, writeData, memWrite);
+module dmemory32(read_data, address, write_data, Memwrite, clock);
 input clock;
-input [31:0] Address;
-input [31:0] writeData;
-input memWrite;
-output [31:0] readData;
+input [31:0] address;
+input [31:0] write_data;
+input Memwrite;
+output [31:0] read_data;
 wire clk;
 assign clk = !clock;
 RAM ram(
     .clka(clk),
-    .wea(memWrite),
-    .addra(Address[15:2]),
-    .dina(writeData),
-    .douta(readData)
+    .wea(Memwrite),
+    .addra(address[15:2]),
+    .dina(write_data),
+    .douta(read_data)
 );
 endmodule

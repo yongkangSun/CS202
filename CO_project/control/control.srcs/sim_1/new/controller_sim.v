@@ -19,48 +19,32 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
-module controller_sim();
-    reg [5:0] Opcode, Function_opcode;
-    wire [1:0] ALUOp;
-    wire Jr, RegDST, ALUSrc, MemtoReg, RegWrite, MemWrite, Branch, nBranch, Jmp, Jal, I_format, Sftmd;
-
-    controller test_control(Jr, Jmp, Jal, Branch, nBranch,
-                            RegDST, MemtoReg, RegWrite, MemWrite,
-                            ALUSrc, I_format, Sftmd, ALUOp,
-                            Opcode, Function_opcode);
-
+module control32_sim(
+    );
+        // input
+        reg[5:0]   Opcode = 6'b000000;            
+        reg[5:0]   Function_opcode  = 6'b100000;     
+        // output
+        wire       Jr;
+        wire       RegDST;
+        wire       ALUSrc;            
+        wire       MemtoReg;
+        wire       RegWrite;
+        wire       MemWrite;
+        wire       Branch;
+        wire       nBranch;
+        wire       Jmp;
+        wire       Jal;
+        wire       I_format;
+        wire       Sftmd;
+        wire[1:0]  ALUOp;
+        
+    control32 Uctrl(.Opcode(Opcode),.Function_opcode(Function_opcode),
+                    .Jr(Jr),.RegDST(RegDST),.ALUSrc(ALUSrc),
+                    .MemtoReg(MemtoReg),.RegWrite(RegWrite),
+                    .MemWrite(MemWrite),.Branch(Branch),
+                    .nBranch(nBranch),.Jmp(Jmp),.Jal(Jal),.I_format(I_format),
+                    .Sftmd(Sftmd),.ALUOp(ALUOp));
     initial begin
-        Opcode = 6'h00;
-        Function_opcode = 6'h20;
-        #20
-        Opcode = 6'h00;
-        Function_opcode = 6'h08;
-        #20
-        Opcode = 6'h08;
-        Function_opcode = 6'h08;
-        #20
-        Opcode = 6'h23;
-        Function_opcode = 6'h08;
-        #20
-        Opcode = 6'h2b;
-        Function_opcode = 6'h08;
-        #20
-        Opcode = 6'h04;
-        Function_opcode = 6'h08;
-        #20
-        Opcode = 6'h05;
-        Function_opcode = 6'h08;
-        #20
-        Opcode = 6'h02;
-        Function_opcode = 6'h08;
-        #20
-        Opcode = 6'h03;
-        Function_opcode = 6'h08;
-        #20
-        Opcode = 6'h00;
-        Function_opcode = 6'h02;
-        #20
-        $finish;
-    end
+end
 endmodule
